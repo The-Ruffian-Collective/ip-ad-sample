@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Paving</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --brand-color: #8DCDC8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+        }
+
+        .header {
+            background-color: var(--brand-color);
+            padding: 0.5rem 1rem;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .header-content {
+            max-width: 32rem;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .main-content {
+            max-width: 32rem;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-squares {
+            display: flex;
+        }
+
+        .logo-square {
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--brand-color);
+            margin-right: 0.125rem;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .offer-text {
+            color: var(--brand-color);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .headline {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .discount {
+            color: var(--brand-color);
+            font-size: 3.75rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .discount-text {
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
+        }
+
+        .discount-subtext {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+        }
+
+        .image-container {
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-item {
+            padding: 0.75rem;
+            border: 1px solid var(--brand-color);
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--slate-700);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            background-color: var(--brand-color);
+            color: white;
+        }
+
+        .cta-button {
+            width: 100%;
+            background-color: var(--brand-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+
+        .cta-subtext {
+            text-align: center;
+            color: var(--slate-600);
+        }
+
+        .footer {
+            background-color: #f8fafc;
+            padding: 1rem;
+            text-align: center;
+            color: var(--slate-600);
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        @media (max-width: 640px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-info {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <span>0800 001 6753</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <span>info@indiepaving.co.uk</span>
+                </div>
+            </div>
+            <div>0141 212 9965</div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="logo">
+            <div class="logo-squares">
+                <div class="logo-square"></div>
+                <div class="logo-square"></div>
+                <div class="logo-square"></div>
+            </div>
+            <div class="logo-text">
+                Indie<br>Paving<sup>®</sup>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div>
+                <div class="offer-text">LIMITED TIME OFFER</div>
+                <h2 class="headline">2025<br>BOOKINGS<br>NOW OPEN</h2>
+                <div class="discount">15%</div>
+                <div class="discount-text">EARLY BIRD DISCOUNT</div>
+                <div class="discount-subtext">Book before end of 2024</div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.ibb.co/g33g2bs/398654356-18294403744122693-876362028307408871-n.jpg" alt="Premium Paving Design">
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="service-item">Driveways</div>
+            <div class="service-item">Paving</div>
+            <div class="service-item">Patios</div>
+            <div class="service-item">Gardens</div>
+        </div>
+
+        <a href="https://the-ruffian-collective.github.io/ip-quote-gen/">
+            <button class="cta-button">
+                GET A QUOTE
+                <i data-lucide="arrow-right"></i>
+            </button>
+        </a>
+        <div class="cta-subtext">Transform your outdoor space today!</div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <i data-lucide="map-pin"></i>
+            <span>Serving Glasgow & Surrounding Areas</span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
